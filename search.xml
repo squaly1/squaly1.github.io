@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>解决openwrt内网间歇性无法域名访问nas问题</title>
+      <link href="/post/49345.html"/>
+      <url>/post/49345.html</url>
+      
+        <content type="html"><![CDATA[<p>一秒钟切底解决内网域名访问问题</p><p>使用双软路由经常会出现域名访问内网的环路问题，具体情况是域名可以ping通ip但是却间歇性不能访问，遇到这种问题只需要在：<h4>openwrt-网络</h4>，主机名：域名 ip地址：内网转发的ip（通常为群晖ip），设置完清除浏览器缓存或用无痕模式测试即可。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> openwrt </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hexo进阶设置</title>
+      <link href="/post/60403.html"/>
+      <url>/post/60403.html</url>
+      
+        <content type="html"><![CDATA[<h3><p>除了学习markdown还有好多东西折腾，今天设置完评论功能，和域名绑定，又要准备部署图传到github了，<br>虽然本地群晖可以搭建图床，可是搭配typora还是不够方便，访问速度也变慢了，<br>反正要翻墙的，索性搭建在github吧hexo当日记使用挺好，<br>很满意hexo但markdown不知要背到什么时候55555～～～～</p></h3>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>我的第一篇博客</title>
+      <link href="/post/63785.html"/>
+      <url>/post/63785.html</url>
+      
+        <content type="html"><![CDATA[<p>从phpdms，discuz，wordpress到hexo，hexo感觉真不错，借助githu做文件存储，连服务器都不用买了，支持markdown语法，自由的写作方式，无需借助文本编辑器了，唯一缺点是需要学习markdown。<br>  以后再化时间记住markdown语法，无需备案，实名，审核的感觉真好，回到了10几年前建网站的快乐时代。<br>  感谢github大学，各种免费开源的项目，hexo的轻便博客无需数据库php，纯静态页面，愉快的玩耍吧。<p/>  ]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/post/16107.html"/>
+      <url>/post/16107.html</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
