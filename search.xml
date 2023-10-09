@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>truenas使用nfs传输I/O堵塞踩坑</title>
+      <link href="/post/undefined.html"/>
+      <url>/post/undefined.html</url>
+      
+        <content type="html"><![CDATA[<p>宿主系统esxi虚拟了truenas并用nfs协议共享给群晖用来存放电影之类的文件，复制文件的时候经常发现I/O堵塞，<br>具体表现为复制文件时速度慢，而且经常无法响应，用imac的nfs链接truenas也出现同样的情况，<br>最初以为是nfs的权限问题，把权限重新设置一遍后情况如故，<br>最后发现传输文件的时候，truenas的cpu占用非常高，<br>怀疑是分配8个虚拟cpu不够，索性分配40个虚拟cpu，每插槽10个，插槽数4，终于解决了。<br>安装的版本是<b>TrueNAS_SCALE</b>，按照教程安装的时候客户机操作系统系统选择了freebsd，发现esxi报警告，应该选择<front color=red>debain</front>系统，<br>各位记住这个坑：<b>core</b>版本选择freebsd，<b>SCALE</b>版本请选择<front color=red>debain</front>，免得又要重装，郁闷，<br>网上这些教程真的不负责任，写一半不写一半，或者写教程的人本身也不太懂，增加了我们学习成本。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> truenas nfs 群晖 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>openclash订阅链接踩坑记</title>
+      <link href="/post/52816.html"/>
+      <url>/post/52816.html</url>
+      
+        <content type="html"><![CDATA[<p>最近的机场老是出问题，于是换了个机场，发现订阅老是失败，具体表现为，可以下载配置文件，配置文件检测通过，但是就是无法，提示内核出错，具体请查看配置文件，查看日志发现读取不了自定义的附加规则导致，把附加的规则去掉后成功订阅，排除了几个小时，真坑。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> openclash openwrt </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>解决openwrt内网间歇性无法域名访问nas问题</title>
       <link href="/post/49345.html"/>
       <url>/post/49345.html</url>
