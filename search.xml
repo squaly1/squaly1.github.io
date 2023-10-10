@@ -8,9 +8,15 @@
       <link href="/post/31699.html"/>
       <url>/post/31699.html</url>
       
-        <content type="html"><![CDATA[<p>nastools最烦的是文件夹同步的设置，刚刚开始时被网上的教程看到一头雾水，什么不能分不同硬盘，必须这只link目录等都是误导，只需要简单的设置两个目录，一个是下载目录，一个是保存目录（也可以做硬链接），docker映射的时候不要直接映射根目录，docker会认为是跨盘，就算是跨盘映射二级或下面目录也可以正常使用。</p><p><img src="https://app.bliyun.me:8099/img/2023/10/10/65252015e87d0.jpg" alt="WeChat11b3781df7f011b7ab629a57ad982c64"></p><p>和qbittorrent的文件映射目录必须完全一样，因为下载完的时候nastools复制&#x2F;转移&#x2F;硬链接等需要发送docker的实际路径。如果qbittorrent的映射路径不一致，会导致复制出错，找不到下载地址，路径不存在等奇怪问题（别问我怎么知道的）。</p><p>up主的media目录为群晖内的电影下载目录，truenas目录是在pt文件夹下nfs映射的目录，实测跨盘跨设备正常运行，做好映射路径就可以了，就是右边的&#x2F;vedio，&#x2F;medio目录，docker只认出右边的路径，不会知道跨盘跨设备。</p><p><img src="https://app.bliyun.me:8099/img/2023/10/10/6525227739260.jpg" alt="WeChatc4d45394c0954de5ddc6387b612b9f4e"></p><p>目录同步，左边是下载目录，右边是保存目录，有不需要nastool识别的文件夹，例如学习资料，记得把识别重命名关闭掉。</p><p><img src="https://app.bliyun.me:8099/img/2023/10/10/652522bff01b3.jpg" alt="WeChat998f14dd02701dd2baa57e5ff172483f"></p><p>下载目录配置，同样设置。</p><p><img src="https://app.bliyun.me:8099/img/2023/10/10/6525231d01a56.jpg" alt="WeChat779ca79a57b043228dd9763770d45b28"></p><p>基础设置，我设置为下载软件监控，只管理nastool添加的下载这里关闭，以后在qbittorrent添加的下载也会自动联动nastool识别并自动复制。</p><p>安装教程一大堆，都是讲一半不讲一半，只好自己摸索，解决问题。nastool记得下载2.91或2.90，别下载新版本，需要bt认证，老版本功能够用了，这些批处理命令不需要更新花巧功能，最后谢谢作者的付出。</p>]]></content>
+        <content type="html"><![CDATA[<p>nastools最烦的是文件夹同步的设置，刚刚开始时被网上的教程看到一头雾水，什么不能分不同硬盘，必须这只link目录等都是误导，只需要简单的设置两个目录，一个是下载目录，一个是保存目录（也可以做硬链接），docker映射的时候不要直接映射根目录，docker会认为是跨盘，就算是跨盘映射二级或下面目录也可以正常使用。</p><p><img src="https://app.bliyun.me:8099/img/2023/10/10/65252015e87d0.jpg" alt="docker文件夹映射"></p><p>和qbittorrent的文件映射目录必须完全一样，因为下载完的时候nastools复制&#x2F;转移&#x2F;硬链接等需要发送docker的实际路径。如果qbittorrent的映射路径不一致，会导致复制出错，找不到下载地址，路径不存在等奇怪问题（别问我怎么知道的）。</p><p>up主的media目录为群晖内的电影下载目录，truenas目录是在pt文件夹下nfs映射的目录，实测跨盘跨设备正常运行，做好映射路径就可以了，就是右边的&#x2F;vedio，&#x2F;medio目录，docker只认出右边的路径，不会知道跨盘跨设备。</p><p><img src="https://app.bliyun.me:8099/img/2023/10/10/6525227739260.jpg" alt="目录同步"></p><p>目录同步，左边是下载目录，右边是保存目录，有不需要nastool识别的文件夹，例如学习资料，记得把识别重命名关闭掉。</p><p><img src="https://app.bliyun.me:8099/img/2023/10/10/6525231d01a56.jpg" alt="基础设置"></p><p>基础设置，关闭下载软件监控。</p><p>安装教程一大堆，都是讲一半不讲一半，只好自己摸索，解决问题。nastool记得下载2.91或2.90，别下载新版本，需要bt认证，老版本功能够用了，这些批处理命令不需要更新花巧功能，最后谢谢作者的付出。</p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> nastool truenas 群晖 qbittorrent </tag>
+            
+        </tags>
       
     </entry>
     
