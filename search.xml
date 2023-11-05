@@ -4,11 +4,30 @@
   
     
     <entry>
+      <title>解决重装emby后播放错误的bug</title>
+      <link href="/post/10540.html"/>
+      <url>/post/10540.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="倒霉的孩子，老是遇上奇奇怪怪的问题"><a href="#倒霉的孩子，老是遇上奇奇怪怪的问题" class="headerlink" title="倒霉的孩子，老是遇上奇奇怪怪的问题"></a>倒霉的孩子，老是遇上奇奇怪怪的问题</h3><p>之前为了磁盘阵列的健康，把pt和各种套件放在2t的m2里面，pt做种满了，尝试用另外一条m2，做raid1增加储存空间，结果黑群提示：<b>此硬盘通过适配器卡安装，无法用于M.2 SSD存储池</b>,顿时石化了，之前已经安装过<a href="https://github.com/007revad/Synology_HDD_db">Synology_HDD_db</a>，（这个工具可以修改群晖不识别m2的问题）再操作一次，重启无数次没有效果，</p><p>这个时候估计要到ssh里面用命令新建储存空间了，由于不确定是否可行，万一又无法使用就浪费时间了。以后肯定会再加m2，甚至u2硬盘，以群晖的兼容性这么差，肯定要重做无数同一操作了，索性推到重做吧。</p><p>暂时装个emby暂时用吧，毕竟要看电视。</p><p>好了，这时候遇上bug了，之前docker已经映射了config和vedio目录，理论上重装无数次，只要配置一样，emby里面就不用重覆设置了，特别是元数据，重新扫描一次多费时间，还有用户设置和播放记录，</p><p>但是却一直出现提示：没有兼容的流,折腾了好久，重装了几次容器，最后的解决方法是：在媒体库删掉映射的文件夹再重新添加，遇到一样问题的不用折腾了，让emby重新扫描一次缓存吧。</p><p><img src="https://cdn.jsdelivr.net/gh/squalychen/img@main/img/WeChat66343c3fcfc941ec85146df4f3d1f610.jpg" alt="删除媒体库文件夹再添加"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> emby </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>群晖使用truenas储存做储存空间</title>
       <link href="/post/30000.html"/>
       <url>/post/30000.html</url>
       
-        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>玩黑群已经有10年左右了，从n54l就开始折腾，随着时间的增加和硬件的不断更换，渐渐觉得黑群不是一个长久使用的方案，原因是，黑群的版本对硬件限制越来越麻烦，例如：网卡驱动，阵列卡不识别，m2不能做储存空间等，最麻烦的是居然不能支持部分hba卡，（例如：戴尔的h330，除非刷直通模式，但风险极大，容易砖）以上种种问题都有方法解决，如果你要换硬件首先要考虑引导能不能驱动，但在你安装新硬件之前是几乎完全不知道能否驱动成功的。</p><p>第2要考虑的是，群晖的文件系统恢复不是一般的麻烦，在其他系统读取文件很困难，如果文件多恢复到一半出现错误真的一点心情都没有。</p><p>现在主要用的是docker的服务，除了photos其他都有代替方案，photos的客户端方便些。</p><p>truenas作为一个免费的操作系统，升级方便，对硬件支持好，而且zfs有很大的优势，于是用truenas代替群晖的储存功能是一个不错的选择，储存和服务分离是大势所趋，不会因为群晖升级失败或新硬件识别不了等问题导致数据读取不了。</p><p>群晖用来跑服务，但nfs共享文件夹不能放套件和homes文件，于是有了以下方法。</p><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h3 id="1-1-nfs设置"><a href="#1-1-nfs设置" class="headerlink" title="1.1 nfs设置"></a>1.1 nfs设置</h3><p>在truenas部署好硬盘和数据集后，开启nfs，并设置好权限，复制数据集地址</p><p><img src="https://app.bliyun.me:8099/img/2023/10/14/65298f0caebbe.jpg" alt="nfs权限"></p><h3 id="1-2-esxi挂载nfs"><a href="#1-2-esxi挂载nfs" class="headerlink" title="1.2 esxi挂载nfs"></a>1.2 esxi挂载nfs</h3><p>来到esxi填上简单的配置信息</p><p><img src="https://app.bliyun.me:8099/img/2023/10/14/6529900cad30f.jpg" alt="esxi设置"></p><h3 id="1-3-虚拟机设置"><a href="#1-3-虚拟机设置" class="headerlink" title="1.3 虚拟机设置"></a>1.3 虚拟机设置</h3><p>虚拟机设置增加上truenas的nfs硬盘，容量随意，按照自己的习惯填写，一般上放些文件和相片</p><p><img src="https://app.bliyun.me:8099/img/2023/10/14/652990e5f2d84.jpg" alt="虚拟机设置"></p><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>在群晖新建储存空间就可以正常使用了，群晖识别不出是虚拟硬盘，可以正常的存放套件或做homes目录，这里不建议大家把qbttorrent放到truenas的文件夹，pt会产生大量的碎片，对阵列影响很大，建议用m2做储存空间给群晖pt，保险起见qbttorrent也安装在m2，pt时候会产生缓存文件。</p><p><b>enjoy～！</b></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>玩黑群已经有10年左右了，从n54l就开始折腾，随着时间的增加和硬件的不断更换，渐渐觉得黑群不是一个长久使用的方案，原因是，黑群的版本对硬件限制越来越麻烦，例如：网卡驱动，阵列卡不识别，m2不能做储存空间等，最麻烦的是居然不能支持部分hba卡，（例如：戴尔的h330，除非刷直通模式，但风险极大，容易砖）以上种种问题都有方法解决，如果你要换硬件首先要考虑引导能不能驱动，但在你安装新硬件之前是几乎完全不知道能否驱动成功的。</p><p>第2要考虑的是，群晖的文件系统恢复不是一般的麻烦，在其他系统读取文件很困难，如果文件多恢复到一半出现错误真的一点心情都没有。</p><p>现在主要用的是docker的服务，除了photos其他都有代替方案，photos的客户端方便些。</p><p>truenas作为一个免费的操作系统，升级方便，对硬件支持好，而且zfs有很大的优势，于是用truenas代替群晖的储存功能是一个不错的选择，储存和服务分离是大势所趋，不会因为群晖升级失败或新硬件识别不了等问题导致数据读取不了。</p><p>群晖用来跑服务，但nfs共享文件夹不能放套件和homes文件，于是有了以下方法。</p><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h3 id="1-1-nfs设置"><a href="#1-1-nfs设置" class="headerlink" title="1.1 nfs设置"></a>1.1 nfs设置</h3><p>在truenas部署好硬盘和数据集后，开启nfs，并设置好权限，复制数据集地址</p><p><img src="https://cdn.jsdelivr.net/gh/squalychen/img@main/img/WeChatfac33251f48b6947ccddf3418b9f2968.jpg" alt="可以直接选择acl的open预设策略，如果遇到权限不够再增加群组权限"></p><h3 id="1-2-esxi挂载nfs"><a href="#1-2-esxi挂载nfs" class="headerlink" title="1.2 esxi挂载nfs"></a>1.2 esxi挂载nfs</h3><p>来到esxi填上简单的配置信息</p><p><img src="https://cdn.jsdelivr.net/gh/squalychen/img@main/img/WeChatdaeae87114c9eae17a6ef6d448b89efb.jpg" alt="esxi增加nfs储存"></p><h3 id="1-3-虚拟机设置"><a href="#1-3-虚拟机设置" class="headerlink" title="1.3 虚拟机设置"></a>1.3 虚拟机设置</h3><p>虚拟机设置增加上truenas的nfs硬盘，容量随意，按照自己的习惯填写，一般上放些文件和相片</p><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>在群晖新建储存空间就可以正常使用了，群晖识别不出是虚拟硬盘，可以正常的存放套件或做homes目录，这里不建议大家把qbttorrent放到truenas的文件夹，pt会产生大量的碎片，对阵列影响很大，建议用m2做储存空间给群晖pt，保险起见qbttorrent也安装在m2，pt时候会产生缓存文件。</p><p><b>enjoy～！</b></p>]]></content>
       
       
       
@@ -27,7 +46,7 @@
       <link href="/post/31699.html"/>
       <url>/post/31699.html</url>
       
-        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>nastools最烦的是文件夹同步的设置，刚刚开始时被网上的教程看到一头雾水，什么不能分不同硬盘，必须这只link目录等都是误导，只需要简单的设置两个目录，一个是下载目录，一个是保存目录（也可以做硬链接），docker映射的时候不要直接映射根目录，docker会认为是跨盘，就算是跨盘映射二级或下面目录也可以正常使用。</p><h2 id="docker设置"><a href="#docker设置" class="headerlink" title="docker设置"></a>docker设置</h2><p><img src="https://app.bliyun.me:8099/img/2023/10/10/65252015e87d0.jpg" alt="docker文件夹映射"></p><p>和qbittorrent的文件映射目录必须完全一样，因为下载完的时候nastools复制&#x2F;转移&#x2F;硬链接等需要发送docker的实际路径。如果qbittorrent的映射路径不一致，会导致复制出错，找不到下载地址，路径不存在等奇怪问题（别问我怎么知道的）。</p><p>up主的media目录为群晖内的电影下载目录，truenas目录是在pt文件夹下nfs映射的目录，实测跨盘跨设备正常运行，做好映射路径就可以了，就是右边的&#x2F;vedio，&#x2F;medio目录，docker只认出右边的路径，不会知道跨盘跨设备。</p><p><img src="https://app.bliyun.me:8099/img/2023/10/10/6525227739260.jpg" alt="目录同步"></p><p>目录同步，左边是下载目录，右边是保存目录，有不需要nastool识别的文件夹，例如学习资料，记得把识别重命名关闭掉。</p><p><img src="https://app.bliyun.me:8099/img/2023/10/10/6525231d01a56.jpg" alt="基础设置"></p><p>基础设置，关闭下载软件监控。</p><p><img src="https://app.bliyun.me:8099/img/2023/10/12/65273fb9465fa.jpg" alt="下载目录"></p><p>下载器-下载目录配置，nastool下载的时候会在qbttorrent推送存储目录，如果这里设置错就会储存在错误地址，切记！</p><p>qbttorrent设置，docker映射的路径和nastool一致</p><p><img src="https://app.bliyun.me:8099/img/2023/10/12/65274143713ec.jpg" alt="设置"></p><p>为了避免nastool同步未完成的文件，请勾上：不完整文件扩展名，默认路径和未完成的文件看个人需要添加。</p><p><img src="https://app.bliyun.me:8099/img/2023/10/12/65274205a4ec4.jpg" alt="分类"></p><p>最好记得右键分类的全部，添加相应的分类名和路径。</p><p>enjoy～～～！</p><p>安装教程一大堆，都是讲一半不讲一半，只好自己摸索，解决问题。nastool记得下载2.91或2.90，别下载新版本，需要bt认证，老版本功能够用了，这些批处理命令不需要更新花巧功能，最后谢谢作者的付出。</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>nastools最烦的是文件夹同步的设置，刚刚开始时被网上的教程看到一头雾水，什么不能分不同硬盘，必须这只link目录等都是误导，只需要简单的设置两个目录，一个是下载目录，一个是保存目录（也可以做硬链接），docker映射的时候不要直接映射根目录，docker会认为是跨盘，就算是跨盘映射二级或下面目录也可以正常使用。</p><h2 id="docker设置"><a href="#docker设置" class="headerlink" title="docker设置"></a>docker设置</h2><p><img src="https://cdn.jsdelivr.net/gh/squalychen/img@main/img/WeChat10d2bb6ab555b534b25081a5e436bd0d.jpg" alt="docker映射目录，路径与qbittorrent，emby，chinesesubtitles等连动软件保持一致"></p><p>和qbittorrent的文件映射目录必须完全一样，因为下载完的时候nastools复制&#x2F;转移&#x2F;硬链接等需要发送docker的实际路径。如果qbittorrent的映射路径不一致，会导致复制出错，找不到下载地址，路径不存在等奇怪问题（别问我怎么知道的)。</p><p>up主的media目录为群晖内的电影下载目录，truenas目录是在pt文件夹下nfs映射的目录，实测跨盘跨设备正常运行，做好映射路径就可以了，就是右边的&#x2F;vedio，&#x2F;medio目录，docker只认出右边的路径，不会知道跨盘跨设备。</p><p>目录同步，左边是下载目录，右边是保存目录，有不需要nastool识别的文件夹，例如学习资料，记得把识别重命名关闭掉。</p><p><img src="https://cdn.jsdelivr.net/gh/squalychen/img@main/img/WeChatffc6773e04c7d53642ae8d9b3e17e951.jpg" alt="目录同步设置"></p><p>基础设置，关闭下载软件监控。</p><p><img src="https://cdn.jsdelivr.net/gh/squalychen/img@main/img/WeChatd2aa38c7cc160a50daba9a7a21615b6f.jpg" alt="下载目录"></p><p>下载器-下载目录配置，nastool下载的时候会在qbttorrent推送存储目录，如果这里设置错就会储存在错误地址，切记！</p><p>qbttorrent设置，docker映射的路径和nastool一致</p><p>为了避免nastool同步未完成的文件，请勾上：不完整文件扩展名，默认路径和未完成的文件看个人需要添加。</p><p><img src="https://cdn.jsdelivr.net/gh/squalychen/img@main/img/WeChata808eca287b8ce9db5a835b17397c0cd.jpg" alt="右键分类，输入分类名和路径，必须和nastools一致"></p><p>最好记得右键分类的全部，添加相应的分类名和路径。</p><p>enjoy～～～！</p><p>安装教程一大堆，都是讲一半不讲一半，只好自己摸索，解决问题。nastool记得下载2.91或2.90，别下载新版本，需要bt认证，老版本功能够用了，这些批处理命令不需要更新花巧功能，最后谢谢作者的付出。</p><p>ps:如果遇到困难请给我留言，会尽力解答。</p>]]></content>
       
       
       
