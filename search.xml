@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>emby容器推荐amilys/embyserver</title>
+      <link href="/post/46998.html"/>
+      <url>/post/46998.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>开心版的emby容器有很多，比较出名的是lovechan，zishuo（不推荐，已经3年多没更新了），下面介绍的是amilys，目前使用比较满意，主要推荐原因是集成了几个插件：</p><h2 id="1-增加了主题："><a href="#1-增加了主题：" class="headerlink" title="1:增加了主题："></a>1:增加了主题：</h2><p><a href="https://github.com/Nolovenodie/emby-crxhttps://github.com/Nolovenodie/emby-crx">https://github.com/Nolovenodie/emby-crxhttps://github.com/Nolovenodie/emby-crx</a></p><h2 id="2-dd-danmaku-Emby-弹幕库插件（这插件我一直没成功开启过）："><a href="#2-dd-danmaku-Emby-弹幕库插件（这插件我一直没成功开启过）：" class="headerlink" title="2:dd-danmaku Emby 弹幕库插件（这插件我一直没成功开启过）："></a>2:dd-danmaku Emby 弹幕库插件（这插件我一直没成功开启过）：</h2><p><a href="https://github.com/RyoLee/dd-danmaku">https://github.com/RyoLee/dd-danmaku</a></p><h2 id="3：调用外部播放器："><a href="#3：调用外部播放器：" class="headerlink" title="3：调用外部播放器："></a>3：调用外部播放器：</h2><p><a href="https://github.com/bpking1/embyExternalUrl">https://github.com/bpking1/embyExternalUrl</a></p><h3 id="重点推荐"><a href="#重点推荐" class="headerlink" title="重点推荐"></a>重点推荐</h3><p>非常实用的插件，本地播放基本上不需要显卡转码，现在的硬件足够强大了，根本不需要显卡转码，tv播放，up主用<b>shield tv 2019 pro</b>电视上直接源码播放，主要是网页chrome和手机上播放，部分视频没转吗直接播放不了，现在有了这个插件，完美解决了。</p><p>服务端安装后，在浏览器会出现播放器的图标，点击图标就可以调用外部播放器了。 </p><p><img src="http://10.10.10.226:9080/i/2023/11/09/654c61cb266dc.png" alt="222"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> emby </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>解决重装emby后播放错误的bug</title>
       <link href="/post/10540.html"/>
       <url>/post/10540.html</url>
