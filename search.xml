@@ -4,11 +4,24 @@
   
     
     <entry>
+      <title>passwall自动切换节点导致hexo无法上传github</title>
+      <link href="/post/28799.html"/>
+      <url>/post/28799.html</url>
+      
+        <content type="html"><![CDATA[<p>今天修改了部分代码，本地测试正常，hexo g，hexo s完全没问题，</p><p>hexo d的时候发现报错：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">INFO  Deploying: git</span><br><span class="line">INFO  Clearing .deploy_git folder...</span><br><span class="line">INFO  Copying files from public folder...</span><br><span class="line">INFO  Copying files from extend dirs...</span><br><span class="line">On branch master</span><br><span class="line">nothing to commit, working tree clean</span><br><span class="line">kex_exchange_identification: Connection closed by remote host</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line">FATAL Something&#x27;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html</span><br><span class="line">Error: Spawn failed</span><br><span class="line">    at ChildProcess.&lt;anonymous&gt; (/Users/user/blog/node_modules/hexo-util/lib/spawn.js:51:21)</span><br><span class="line">    at ChildProcess.emit (node:events:517:28)</span><br><span class="line">    at ChildProcess._handle.onexit (node:internal/child_process:292:12)</span><br></pre></td></tr></table></figure><p>心中一万只草泥马，经常使用没问题，怎么今天突然出这个错误，然后一个个问题排查，最后发现是梯子的问题导致，今天刚刚设置了passwall的自动切换节点，可以访问YouTube，github，主页也访问正常，就是不能上传，关闭梯子后可以正常上传了，以后出现这个错误的朋友可以尝试一下。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>github图床别用cdn</title>
       <link href="/post/10899.html"/>
       <url>/post/10899.html</url>
       
-        <content type="html"><![CDATA[<p>picGo搭建github图床遇坑，图片经常显示不了。</p><p>网上好多教程搭建github图床使用cdn加速，实测cdn经常抽风，墙的问题，这样还不如不用cdn加速。</p><p>直接用<a href="https://raw.githubusercontent.com/[username/]/[%E4%BB%93%E5%BA%93%E5%90%8D]">https://raw.githubusercontent.com/[username\]/[仓库名]</a></p><p>别用这种形式：<red> <a href="https://cdn.jsdelivr.net/gh/[github%E7%94%A8%E6%88%B7%E5%90%8D]/[%E4%BB%93%E5%BA%93%E5%90%8D]@main">https://cdn.jsdelivr.net/gh/[github用户名]/[仓库名]@main</a> </red></p><p>最好自己搭建兰空图床吧，反正自己有nas了</p>]]></content>
+        <content type="html"><![CDATA[<p>picGo搭建github图床遇坑，图片经常显示不了。</p><p>网上好多教程搭建github图床使用cdn加速，实测cdn经常抽风，墙的问题，这样还不如不用cdn加速。</p><p>直接用<a href="https://raw.githubusercontent.com/[username/]/[%E4%BB%93%E5%BA%93%E5%90%8D]">https://raw.githubusercontent.com/[username\]/[仓库名]</a></p><p>别用这种形式：<red> <a href="https://cdn.jsdelivr.net/gh/[github%E7%94%A8%E6%88%B7%E5%90%8D]/[%E4%BB%93%E5%BA%93%E5%90%8D]@main">https://cdn.jsdelivr.net/gh/[github用户名]/[仓库名]@main</a> </red></p><p>最好自己搭建兰空图床吧，反正自己有nas了</p><p>ps:已经知道为什么会偶尔访问不到cdn了，原因是passwall，以前用openclash是正常访问，换成passwall，就不能访问了，图传还是自建省心点，现在上个网真烦啊，在不同软件间切换调试。</p>]]></content>
       
       
       
