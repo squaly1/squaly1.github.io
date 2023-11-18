@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>jellyfin弹幕插件danmu使用体验</title>
+      <link href="/post/16165.html"/>
+      <url>/post/16165.html</url>
+      
+        <content type="html"><![CDATA[<p>github最近有个好玩的项目：<a href="https://github.com/cxfksword/jellyfin-plugin-danmu">jellyfin-plugin-danmu</a></p><p>这是一个影片增加弹幕的插件，在jellyfin上安装，可以调用b站，优酷等弹幕，生成ass字幕，在jellyfin或emby选择danmu.ass字幕就可以了，挺方便，可惜存在以下缺点：</p><p>1.需要第三方播放器，在tv上播放不方便，在chrome上没找到调用的选项，可能要安装油猴脚本，很少在chrome看片，放弃。</p><p>2.生成的ass字幕，在影片里面切换danmu.ass字幕就可以显示字幕了，这种方式最好，不挑客户端，but！！！</p><p>显示弹幕的时候就没有字幕了，wtf，这简直吃之无味，弃之可惜。</p><p>看来目前还不成熟，有兴趣的可以玩玩。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> danmu </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>解决openwet内置adguardhome重启后没有内核</title>
       <link href="/post/56655.html"/>
       <url>/post/56655.html</url>
