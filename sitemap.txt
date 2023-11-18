@@ -18,12 +18,12 @@ http://bliyun.me/photos/index.html
 http://bliyun.me/categories/index.html
 http://bliyun.me/tags/index.html
 http://bliyun.me/
-http://bliyun.me/tags/emby/
 http://bliyun.me/tags/github/
+http://bliyun.me/tags/emby/
 http://bliyun.me/tags/hexo/
 http://bliyun.me/tags/danmu/
-http://bliyun.me/tags/nastool/
 http://bliyun.me/tags/openclash-openwrt/
+http://bliyun.me/tags/nastool/
 http://bliyun.me/tags/truenas-nfs-%E7%BE%A4%E6%99%96/
 http://bliyun.me/tags/ubuntu/
 http://bliyun.me/tags/%E7%BE%A4%E6%99%96/
