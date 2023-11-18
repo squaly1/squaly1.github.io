@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>解决openwet内置adguardhome重启后没有内核</title>
+      <link href="/post/56655.html"/>
+      <url>/post/56655.html</url>
+      
+        <content type="html"><![CDATA[<p>不同的openwrt编译版本经常会遇到adguardhome更新内核，重启后无法启动问题，</p><p>报错：没有内核，手动更新内核后可以正常启动，但是重启后再次出现一样的问题。</p><p>解决方法：</p><p>执行文件路径设置为：&#x2F;usr&#x2F;bin&#x2F;AdGuardHome&#x2F;AdGuardHome</p><p>如果本身是本路径，可以先设置到：&#x2F;tmp&#x2F;AdGuardHome，重启后再换回来，一般是文件夹权限问题。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> adguardhome </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>passwall自动切换节点导致hexo无法上传github</title>
       <link href="/post/28799.html"/>
       <url>/post/28799.html</url>
