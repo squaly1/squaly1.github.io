@@ -4,11 +4,30 @@
   
     
     <entry>
+      <title>关于购买域名的技巧和经验总结</title>
+      <link href="/post/44337.html"/>
+      <url>/post/44337.html</url>
+      
+        <content type="html"><![CDATA[<p>自从10几年前搭建的第一个论坛开始，前前后后购买过10几个域名，.com .com.cn .net .me .top都买过，不建议用免费的域名，原因有以下几点：</p><ol><li><p>ddns麻烦，好多不支持免费域名，而且域名太难记。</p></li><li><p>不支持泛域名，这个是最不方便的，玩了docker后，好多服务直接用泛域名反代一下，端口不用记，直接修改二级域名，方便又安全。</p></li><li><p>不能使用其他dns服务，例如：cloudflare。</p></li></ol><p>购买域名也走了很多弯路，以前在一个米吧的网站购买域名和服务器，后来老板直接走佬了，域名直接被盗了，接着到万网（后来被阿里收购）购买域名，慢慢要你实名备案，拍照审核，当年做论坛有时有广告机器人在上面发贴，直接关了你的网站，发现连接不了才告诉要你删帖，经常性各种敏感字要你屏蔽，纯播客网站社区也会打电话过来询问，个人爱好的小站哪有精力折腾，索性关闭，就算只买域名做nas的ddns，也要你备案，甚至年检，it‘s crazy！</p><p>建议直接到国外的域名商购买域名，支持支付宝，也很方便，没那么多麻烦事，（说白就是不想个人建站）</p><p>推荐大家在：<a href="https://www.namesilo.com/">https://www.namesilo.com/</a> 购买域名，价格公道，注意的是个人建站或做ddns没必要买.com .net域名</p><ol><li>资源少，剩下的域名都是比较长的，不容易记。</li><li>价格贵，首年几十块，续费100多。</li><li>随机买过.me域名，真的套路，首年几十，续费居然要100多，由于是随意购买的域名，果断放弃。</li><li>推荐买.top域名，首年10几元续费也是30左右。</li></ol><p>选择域名有个技巧，大家最好先用虚拟机，打开浏览器，进入西部数码的域名批量查询，寻找优质域名：<a href="https://www.west.cn/web/mi/">https://www.west.cn/web/mi/</a></p><p>选好后续就直接在虚拟机扫域名，然后慢慢选，或者你有自己喜欢的域名注册的时候查询也可以，</p><p>选好域名后，回到namesilo注册（几个英语，不会看的话用谷歌翻译页面）购买完点击My Account&#x2F;Domain Manager&#x2F;点击购买的域名&#x2F;Change NameServer，更改dns服务器，首选鼎鼎大名的cloudflare。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 域名 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>切底解决兰空图床设置反代后读取不到css文件</title>
       <link href="/post/62813.html"/>
       <url>/post/62813.html</url>
       
-        <content type="html"><![CDATA[<p>好多人设置兰空图床方向代理后加载不到css，在github已经给出解决方法：<a href="https://github.com/lsky-org/lsky-pro/discussions/357%EF%BC%8C%EF%BC%88%E4%BD%A9%E6%9C%8D%E5%85%B0%E7%A9%BA%E5%9B%A2%E9%98%9F%E4%B8%80%E5%B9%B4%E9%83%BD%E4%B8%8D%E4%BF%AE%E5%A4%8D%E8%BF%99%E4%B8%AAbug%EF%BC%89">https://github.com/lsky-org/lsky-pro/discussions/357，（佩服兰空团队一年都不修复这个bug）</a></p><p><img src="https://ls.aaaz.top:83/i/2023/11/28/6565dba8afdba.png" alt="储存策略"></p><p>picgo的兰空插件</p><p>域名：兰空反代后的域名和端口</p><p>token：重新用apifox算出token</p>]]></content>
+        <content type="html"><![CDATA[<p>好多人设置兰空图床方向代理后加载不到css，在github已经给出解决方法：<a href="https://github.com/lsky-org/lsky-pro/discussions/357%EF%BC%8C">https://github.com/lsky-org/lsky-pro/discussions/357，</a></p><p>（佩服兰空团队一年都不修复这个bug）</p><p><img src="https://ls.aaaz.top:83/i/2023/11/28/6565dba8afdba.png" alt="储存策略"></p><p>picgo的兰空插件</p><p>域名：兰空反代后的域名和端口(不用&#x2F;api&#x2F;v1)</p><p>token：重新用apifox算出token</p>]]></content>
       
       
       
